@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');    /*font-family: 'Rubik', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap'); /*font-family: 'Kanit', sans-serif;*/
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway' sans-serif;
+}
+
+html, body {
+    background-color:rgba(255, 255, 255, .9);
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    background-color: rgb(36, 36, 36);
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.nav li {
+    display: inline;
+    border-right: 1px solid rgba(255, 255, 255, .9)
+}
+
+.nav li:last-child {
+    border-right: none;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+    display: inline-block;
+    padding: .5em;
+    color: rgba(255, 255, 255, .9);
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color:  rgba(255, 255, 255, .6);
+}
+
+.main-nav {
+    text-align: center;
+    font-size: 1.9em;
+    font-weight: lighter;
+}
+
+#active {
+
+}
+
+.logo-header {
+    width: 300px;
+    padding-top: 10px;
+}
+
+.main-logo {
+    width: 300px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.main-heading {
+    max-width: 900px;
+    margin: auto;
+}
+
+.heading {
+    font-family: 'Great Vibes', cursive;
+    font-weight: lighter;
+    font-size: 3.2em;
+    text-align: center;
+}
+
+.shoppe-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 25px;
+    justify-items: center;
+}
+
+.shoppe-item {
+    
+}
+
+.shoppe-item-title {
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Kanit', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.shoppe-item-img {
+    width: 250px;
+    border: 1px solid rgb(36, 36, 36);
+    border-radius: 0;
+}
+
+.shoppe-item-details {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5px;
+}
+
+.shoppe-item-price {
+    font-size: 1.2em;
+    font-weight: bolder;
+    font-family: 'Rubik', sans-serif;
+}
+
+.shoppe-item-btn {
+    border: 2px solid rgb(163, 163, 163);
+    color: white;
+    background:rgb(36, 36, 36);
+    font-family: 'Kanit', sans-serif;
+    border-radius: 0;
+    text-align: center;
+    vertical-align: center;
+    padding: .40em .40em;
+    cursor: pointer;
+}
+
+.shoppe-item-btn:hover {
+    background-color:rgb(66, 66, 66);
+}
+
+.main-footer-container {
+    background-color: rgb(36, 36, 36);
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.main-footer {
+    background-color: rgb(36, 36, 36);
+    max-width: 900px;
+    height: 100px;
+    padding: 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;;
+}
+
+.logo-footer {
+    max-width: 450px;
+}
+
+.logo-footer-img {
+    width: 150px;
+    padding-left: 15px;
+}
+
+.social-media-footer {
+    max-width: 450px;
+    display: grid;
+    grid-template-columns: repeat(auto, 1fr);
+    justify-content: end;
+}
+
+.social-media-footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+.social-media-footer a {
+    text-decoration: none;
+    padding-right: 15px;
+}
+
+.social-logo-img {
+    width: 25px;
+}
+
+.copyright-footer {
+    color: rgba(255, 255, 255, .9);
+    text-align: center;
+}
