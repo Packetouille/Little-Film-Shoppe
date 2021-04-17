@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');    /*font-family: 'Rubik', sans-serif;*/
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap'); /*font-family: 'Kanit', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');    /*font-family: 'Kanit', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');         /*font-family: 'Comfortaa', cursive;*/
 
 * {
     box-sizing: border-box;
@@ -25,7 +25,7 @@ html, body {
 }
 
 .nav {
-    width: 100%;
+    min-width: 325px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -57,8 +57,9 @@ html, body {
 }
 
 .main-nav {
+    font-family: 'Comfortaa', cursive;
     text-align: center;
-    font-size: 1.9em;
+    font-size: 1.45em;
     font-weight: lighter;
 }
 
@@ -88,11 +89,16 @@ html, body {
 }
 
 .heading {
-    font-family: 'Great Vibes', cursive;
-    font-weight: lighter;
-    font-size: 3.2em;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    font-size: 1.8em;
     text-align: center;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    text-decoration: underline;
 }
+
+/**************************SHOPPE ITEMS**************************/
 
 .shoppe-items {
     display: grid;
@@ -101,8 +107,8 @@ html, body {
     justify-items: center;
 }
 
-.shoppe-item {
-    
+.heading:first-child {
+    padding-top: 10px;
 }
 
 .shoppe-item-title {
@@ -148,6 +154,41 @@ html, body {
 .shoppe-item-btn:hover {
     background-color:rgb(66, 66, 66);
 }
+
+/**************************CART**************************/
+
+.cart-container {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.cart-item {
+    margin: auto;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-top: 25px;
+}
+
+.cart-item:last-child {
+    border-bottom: none;;
+}
+
+.cart-item-img-container {
+    padding-bottom: 10px;
+}
+
+.cart-item-img {
+    width: 100px;
+}
+
+
+
+
+/**************************FOOTER**************************/
 
 .main-footer-container {
     background-color: rgb(36, 36, 36);
