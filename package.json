@@ -1,0 +1,19 @@
+{
+  "name": "little_film_shoppe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "_assets/shoppe_scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alondo1/Little-Film-Shoppe.git"
+  },
+  "author": "Andres Londono",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alondo1/Little-Film-Shoppe/issues"
+  },
+  "homepage": "https://github.com/alondo1/Little-Film-Shoppe#readme"
+}
