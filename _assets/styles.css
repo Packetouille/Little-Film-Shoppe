@@ -159,8 +159,8 @@ html, body {
 
 /**************************CART**************************/
 
-.cart-container {
-    max-width: 900px;
+.cart-items {
+    max-width: 500px;
     margin: 20px auto;
 }
 
@@ -168,26 +168,87 @@ html, body {
     margin: auto;
     max-width: 500px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 25px;
+    grid-template-columns: 100px 1fr 30px 45px 100px;
+    grid-gap: 20px;
     align-items: center;
     border-bottom: 1px solid black;
-    padding-top: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .cart-item:last-child {
-    border-bottom: none;;
+    border-bottom: none;
 }
 
 .cart-item-img-container {
-    padding-bottom: 10px;
 }
 
 .cart-item-img {
     width: 100px;
 }
 
+.cart-item-name {
+    font-family: 'Kanit', sans-serif;
+    font-size: .9em;
+    border-right: 1px solid black;
+}
 
+.cart-item-price {
+    max-width: 30px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1em;
+}
+
+.item-remove-btn {
+}
+
+.total-container {
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 25px;
+}
+
+.calculations-container {
+    display: grid;
+    grid-template-columns: 150px 100px;
+    padding-left: 115px;
+}
+
+.calculated-heading {
+    font-family: 'Kanit', sans-serif;
+    font-weight: bolder;
+    font-size: 1.3em;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.sub-tax-amount {
+    font-family: 'Kanit', sans-serif;
+    font-weight: bolder;
+    font-size: 1em;
+    border-bottom: 1px solid black;
+    text-align: right;
+    align-self: baseline;
+}
+
+.total-amount {
+    font-family: 'Kanit', sans-serif;
+    font-weight: bolder;
+    font-size: 1.5em;
+    border-bottom: 1px solid black;
+    text-align: right;
+}
+
+.total-amount:last-child {
+    border-bottom: none;
+}
+
+.purchase-btn {
+font-weight: bolder;
+}
 
 
 
