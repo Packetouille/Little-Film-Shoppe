@@ -43,11 +43,8 @@ function updateCartTotal() {
     }
 
     subTotal = Math.round(subTotal * 100) / 100;
-    console.log(`subTotal: ${subTotal} | typeof subTotal: ${typeof subTotal}`);
     taxTotal = Math.round(subTotal * taxRate * 100) / 100;
-    console.log(`taxTotal: ${taxTotal} | typeof taxTotal: ${typeof taxTotal}`);
     total = subTotal + taxTotal;
-    console.log(`Total: ${total} | typeof total: ${typeof total}`);
     document.getElementsByClassName('sub-total')[0].innerText = '$' + subTotal.toFixed(2);
     document.getElementsByClassName('tax-total')[0].innerText = '$' + taxTotal.toFixed(2);
     document.getElementsByClassName('total-amount')[0].innerText = '$' + total.toFixed(2);
