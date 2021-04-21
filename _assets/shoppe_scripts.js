@@ -28,15 +28,14 @@ function ready() {
 }
 
 function updateCartTotal() {
-// Function gets the innerText of the price element (replaces the '$') and innerText from the quantity element 
-// and uses the values to calculate the total. We then modify the innerText of the total-price element with the
-// calculated total.
+// This function updates the cart total by getting the innerText of the price and quantity elements and uses
+// After calculating, we then modify the innerText of the total-price element with the calculated totals.
     let cartItems = document.getElementsByClassName('cart-items')[0];
     let cartItem = cartItems.getElementsByClassName('cart-item');
     let subTotal = 0.00;
     let taxTotal = 0.00;
     let total = 0.00;
-    taxRate = .06;
+    let taxRate = .06;
 
     for (let i = 0; i < cartItem.length; i++) {
         let cartRow = cartItem[i];
@@ -56,23 +55,38 @@ function updateCartTotal() {
 function addToCartClicked(event) {
     let button = event.target;
     let shopItem = button.parentElement.parentElement;
-    let title = shopItem.getElementsByClassName('shoppe-item-title')[0].innerText;
+
+    // Check to see if item already exists in shoppe cart 
+    let itemName = shopItem.getElementsByClassName('shoppe-item-name')[0].innerText;
+    let itemTitle = shopItem.getElementsByClassName('shoppe-item-name')[0].title;
+
+    let cartItems = document.getElementsByClassName('cart-item');
+    for (let i = 0; i < cartItems.length; i++) {
+        let cartItemName = cartItems[i].getElementsByClassName('cart-item-name')[0].innerText;
+        let cartItemTitle = cartItems[i].getElementsByClassName('cart-item-name')[0].title;
+        
+        if (itemName == cartItemName && itemTitle == cartItemTitle) {
+            alert("Item already exists in the shoppe cart!")
+            return;
+        }
+    }
+
     let price = shopItem.getElementsByClassName('shoppe-item-price')[0].innerText;
     let imgSrc = shopItem.getElementsByClassName('shoppe-item-img')[0].src;
     let imgAlt = shopItem.getElementsByClassName('shoppe-item-img')[0].alt;
 
-    addItemToCart(title, price, imgSrc, imgAlt);
+    addItemToCart(itemName, itemTitle, price, imgSrc, imgAlt);
 }
 
-function addItemToCart(title, price, imgSrc, imgAlt) {
+function addItemToCart(itemName, itemTitle, price, imgSrc, imgAlt, ) {
     let cartRow = document.createElement('div');
     cartRow.classList.add('cart-item');
     let cartItems = document.getElementsByClassName('cart-items')[0];
 
     let addItemContents = 
         `<div class="cart-item-img-container"><img class="cart-item-img" src="${imgSrc}" alt="${imgAlt}"/></div>
-        <div class='cart-item-name'>${title}</div>
-        <div class='cart-item-price'>${price}</div>
+        <div class="cart-item-name" title="${itemTitle}">${itemName}</div>
+        <div class="cart-item-price">${price}</div>
         <input class="cart-quantity-input" type="number" value="1"/>
         <button role="button" class="btn item-remove-btn" type="button">REMOVE</button>`
 
