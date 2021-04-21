@@ -1,4 +1,3 @@
-console.log('hello');
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
 }
@@ -105,4 +104,14 @@ function purchaseItems(event) {
     let container = button.parentElement;
     let totalAmount = container.getElementsByClassName('total-amount')[0].innerText;
     alert(`Thank you for your purchase of ${totalAmount}!`);
+
+    let cartItems = document.getElementsByClassName('cart-items')[0];
+    let nodes = cartItems.childNodes.length;
+
+    while (nodes > 1) {
+        cartItems.removeChild(cartItems.lastChild);
+        nodes--;
+    }
+
+    updateCartTotal();
 }
