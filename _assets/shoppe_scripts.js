@@ -8,8 +8,14 @@ function ready() {
 
     let addToCartButtons = document.getElementsByClassName('shoppe-item-btn');
     for (let i = 0; i < addToCartButtons.length; i++) {
-        let button = addToCartButtons[i];
-        button.addEventListener('click', addToCart);
+        let addToCartButton = addToCartButtons[i];
+        addToCartButton.addEventListener('click', addToCartClicked);
+    }
+
+    let removeButtons = document.getElementsByClassName('item-remove-btn');
+    for (let i = 0; i < removeButtons.length; i++) {
+        let removeButton = removeButtons[i];
+        removeButton.addEventListener('click', removeItem);
     }
 
     let quantityElements = document.getElementsByClassName('cart-quantity-input');
@@ -20,8 +26,6 @@ function ready() {
 
     let purchaseButton = document.getElementsByClassName('purchase-btn')[0];
     purchaseButton.addEventListener('click', purchaseItems);
-
-    updateCartTotal();
 }
 
 function updateCartTotal() {
@@ -38,7 +42,7 @@ function updateCartTotal() {
     for (let i = 0; i < cartItem.length; i++) {
         let cartRow = cartItem[i];
         price = parseFloat(cartRow.getElementsByClassName('cart-item-price')[0].innerText.replace('$', ''));
-        quantity = cartRow.getElementsByClassName('cart-quantity-input')[0].value;
+        quantity = parseFloat(cartRow.getElementsByClassName('cart-quantity-input')[0].value);
         subTotal += (price * quantity);
     }
 
@@ -50,13 +54,35 @@ function updateCartTotal() {
     document.getElementsByClassName('total-amount')[0].innerText = '$' + total.toFixed(2);
 }
 
-function addToCart(event) {
+function addToCartClicked(event) {
     let button = event.target;
     let shopItem = button.parentElement.parentElement;
     let title = shopItem.getElementsByClassName('shoppe-item-title')[0].innerText;
     let price = shopItem.getElementsByClassName('shoppe-item-price')[0].innerText;
-    let img = shopItem.getElementsByClassName('')
-    console.log(title, price);
+    let imgSrc = shopItem.getElementsByClassName('shoppe-item-img')[0].src;
+    let imgAlt = shopItem.getElementsByClassName('shoppe-item-img')[0].alt;
+
+    addItemToCart(title, price, imgSrc, imgAlt);
+}
+
+function addItemToCart(title, price, imgSrc, imgAlt) {
+    let cartRow = document.createElement('div');
+    cartRow.classList.add('cart-item');
+    let cartItems = document.getElementsByClassName('cart-items')[0];
+
+    let addItemContents = 
+        `<div class="cart-item-img-container"><img class="cart-item-img" src="${imgSrc}" alt="${imgAlt}"/></div>
+        <div class='cart-item-name'>${title}</div>
+        <div class='cart-item-price'>${price}</div>
+        <input class="cart-quantity-input" type="number" value="1"/>
+        <button role="button" class="btn item-remove-btn" type="button">REMOVE</button>`
+
+    cartRow.innerHTML = addItemContents;
+    cartItems.append(cartRow);
+
+    cartRow.getElementsByClassName('item-remove-btn')[0].addEventListener('click', removeItem);
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
+    updateCartTotal();
 }
 
 function quantityChanged(event) {
@@ -65,6 +91,12 @@ function quantityChanged(event) {
         input.value = 1;
     }
 
+    updateCartTotal();
+}
+
+function removeItem(event) {
+    let itemToRemove = event.target;
+    itemToRemove.parentElement.remove();
     updateCartTotal();
 }
 

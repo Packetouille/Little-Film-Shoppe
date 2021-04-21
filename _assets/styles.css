@@ -100,6 +100,18 @@ html, body {
     text-decoration: underline;
 }
 
+.btn {
+    border: 2px solid rgb(163, 163, 163);
+    color: white;
+    background:rgb(36, 36, 36);
+    font-family: 'Kanit', sans-serif;
+    border-radius: 0;
+    text-align: center;
+    vertical-align: center;
+    padding: .40em .40em;
+    cursor: pointer;
+}
+
 /**************************SHOPPE ITEMS**************************/
 
 .shoppe-items {
@@ -141,17 +153,7 @@ html, body {
     font-family: 'Rubik', sans-serif;
 }
 
-.shoppe-item-btn {
-    border: 2px solid rgb(163, 163, 163);
-    color: white;
-    background:rgb(36, 36, 36);
-    font-family: 'Kanit', sans-serif;
-    border-radius: 0;
-    text-align: center;
-    vertical-align: center;
-    padding: .40em .40em;
-    cursor: pointer;
-}
+
 
 .shoppe-item-btn:hover {
     background-color:rgb(66, 66, 66);
@@ -181,6 +183,7 @@ html, body {
 }
 
 .cart-item-img-container {
+    width: 100px;
 }
 
 .cart-item-img {
