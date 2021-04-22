@@ -124,7 +124,6 @@ function quantityChanged(event) {
     if (isNaN(input.value) || input.value < 1) {
         input.value = 1;
     }
-
     updateCartTotal();
 }
 
@@ -136,6 +135,9 @@ function removeItem(event) {
 }
 
 function purchaseItems(event) {
+// This function runs when the 'Purchase' button in the cart is clicked. It alerts the purchaser
+// with a thank you message and displays their total. Lastly it removes all cart items and it
+// calls the updateCartTotal() to reflect an empty cart after transaction is complete.
     let button = event.target;
     let container = button.parentElement;
     let totalAmount = container.getElementsByClassName('total-amount')[0].innerText;
@@ -148,6 +150,5 @@ function purchaseItems(event) {
         cartItems.removeChild(cartItems.lastChild);
         nodes--;
     }
-
     updateCartTotal();
 }
